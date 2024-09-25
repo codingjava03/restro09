@@ -1,0 +1,26 @@
+{% extends "basepage.html" %}
+{% block start %}
+   
+<div class="register-container">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+    <h2 align="center">        
+    <h2>register</h2>
+    <form method="post" class = 'card p-3 bg-light' > 
+        {% csrf_token %}
+        <div class="form-group" align="center">
+        <input type="text" name="first_name" placeholder="First Name" style="width:300px;" required>
+        <input type="text" name="last_name" placeholder="Last Name" style="width:300px;" required>
+        <input type="text" name="username" placeholder="Username" style="width:300px;" required>
+        <input type="password" name="password" placeholder="Password" style="width:300px;" required>
+        <input type="submit" value="register" required>
+        </div>
+    </form>
+
+    <div class="login-link">
+        <p>Don't have an account? <a href="/login/">login here </a></p>
+    </div>
+        </div>	
+    </div>
+</div>        
+{% endblock %}

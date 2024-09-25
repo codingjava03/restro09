@@ -1,0 +1,18 @@
+{% extends "basepage.html" %}
+{% block start %}
+
+<div class="login-container">
+    <h2>Login Page</h2>
+    <form action="" method="post"> <!-- Corrected action attribute -->
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="submit" value="Login">
+    </form>
+    <div class="register-link">
+        <p>Don't have an account? <a href="/register/">Register here</a></p>
+    </div>
+</div>
+
+{% endblock %}
+

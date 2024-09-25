@@ -1,0 +1,25 @@
+{% extends "basepage.html" %}
+{% block start %}
+<title>Update Form</title>
+</head>	
+<body>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+    <div class="form-group">
+        <label for="r_name">Name:</label>
+        <input type="text" id="r_name" name="r_name" value="{{recipe.r_name}}"><br><br>
+
+        <label for="r_description">Description:</label>
+        <textarea id="r_description" name="r_description"> {{recipe.r_description}}</textarea><br><br>
+       
+        <label for="recipe-image" class="form-label">Image:</label>
+        <input type="file" id="recipe-image" name="recipe.r_image" class="form-control" required> 
+
+        {% if recipe.r_image %}
+        <img src="{{recipe.r_image.url}}" alt="recipe image"
+        class="img thumbnail" style="width:100;style:100px;">
+        {% endif %}
+
+        
+
+        <button type="submit">Submit</button>
